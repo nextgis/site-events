@@ -247,8 +247,8 @@ input:-webkit-autofill {
 }
 
 .dday-main__title{
-	font-size: 8.889rem;
-	letter-spacing: -5px;
+	font-size: 60px;
+	letter-spacing: 1px;
 	word-spacing: 5px;
 	line-height: .8;
 	margin-bottom: 2.8rem;
@@ -256,14 +256,14 @@ input:-webkit-autofill {
 
 @media (max-width: 1280px){
 	.dday-main__title{
-		font-size: 110px;
+		font-size: 45px;
 	}
 }
 
 @media (max-width: 768px){
 	.dday-main__title{
-		font-size: 60px;
-	    letter-spacing: -2px;
+		font-size: 35px;
+	    letter-spacing: 1px;
 	    margin-bottom: 32px;
 	    word-spacing: 0;
 	    text-align: center;
