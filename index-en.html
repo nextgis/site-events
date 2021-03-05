@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes">
+    <title>NextGIS Webinars</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:900&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/material-components-web.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.css">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+    <div class="layout">
+        <main class="dday-main container-fluid">
+            <div class="dday-main__inner">
+                <!-- <img class="dday-main__bg" src="img/map.svg" alt=""> -->
+                <a href="https://nextgis.com" class="logo hidden-xs" target="_blank">
+                    <img class="logo__pic" src="img/logo_v.svg" alt="NextGIS">
+                </a>
+                <a href="https://nextgis.com" class="logo logo--mobile visible-xs" target="_blank">
+                    <img class="logo__pic" src="img/logo.svg" alt="NextGIS">
+                </a>
+                <h1 class="dday-main__title">Webinars</h1>
+                <div class="dday-main__text">
+                    Regular online meetings where we talk about our products, services and important news, and you can ask any questions. For now only in russian language.
+                </div>
+                <div class="dday-main__date"><center>Next meeting: March 23, 2021, 17: 00<br>«Getting started with NextGIS Web Cloud»</center></div>
+                <div class="dday-main__buttons">
+                    <a href="#registration" class="dday-main__button mdc-button mdc-button--raised mdc-button--primary mdc-button--lg hidden-xs hidden-sm">Register to next webinar</a>
+                    <a href="#registration" class="dday-main__button mdc-button mdc-button--raised mdc-button--primary visible-xs-inline-block visible-sm-inline-block">Register</a>
+
+                    <a href="#details" class="dday-main__button dday-main__button--fb mdc-button mdc-button--raised mdc-button--primary mdc-button--outline mdc-button--lg hidden-xs hidden-sm">Details</a>
+                    <a href="#details" class="dday-main__button dday-main__button--fb mdc-button mdc-button--raised mdc-button--primary mdc-button--outline visible-xs-inline-block visible-sm-inline-block">Details</a>
+                </div>
+                <br class="visible-xs">
+                <div class="dday-main__about dday-main__about--h">
+                    <span class="dday-main__about-item">geoinformation systems</span>
+                    <span class="dday-main__about-item">spatial data processing</span>
+                    <span class="dday-main__about-item">cloud geoservices</span>
+                </div>
+                <div class="dday-main__about dday-main__about--v">
+                    <span class="dday-main__about-item">mobile data collection</span>
+                    <span class="dday-main__about-item">spatial data for your projects</span>
+                </div>
+            </div>
+        </main>
+        <article class="registration">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <form id="registration" action="register.php" method="POST" class="form registration-form">
+                            <h2 id="default-dialog-activation">Registartion</h2>
+                            <div class="form-group">
+                                <div class="mdc-textfield" data-mdc-auto-init="MDCTextfield">
+                                    <input type="text" class="mdc-textfield__input" id="fname"
+                                         name="name" required>
+                                    <label for="fname" class="mdc-textfield__label">Name and surname</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="mdc-textfield" data-mdc-auto-init="MDCTextfield">
+                                    <input type="text" class="mdc-textfield__input" id="forg"
+                                         name="org">
+                                    <label for="forg" class="mdc-textfield__label">Organization</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="mdc-textfield" data-mdc-auto-init="MDCTextfield">
+                                    <input type="email" class="mdc-textfield__input" id="femail"
+                                         name="email" required>
+                                    <label for="femail" class="mdc-textfield__label">E-mail</label>
+                                </div>
+                            </div>
+                            <button class="mdc-button mdc-button--primary mdc-button--raised">Отправить</button>
+                        </form>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <div class="registration__text">
+                            <p>Webinar «Getting started with NextGIS Web Cloud. From registartion to map collection» to be held on Tuesday, March 23 at&nbsp;17:00</p>
+                            <p>Register to get a link to the Zoom meeting and receive notifications about the following webinars</p>
+
+                            <p>See you!<br>
+                            NextGIS Teams</p>
+                            <br>
+                            <p style="opacity: .6; font-size: .95rem">Personal data is processed according to &nbsp;<a href="http://nextgis.ru/privacy" target="_blank">our Privacy Policy</a>.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="mdc-dialog-default"
+                      class="mdc-dialog"
+                      role="alertdialog"
+                      aria-hidden="true"
+                      aria-labelledby="mdc-dialog-default-label"
+                      aria-describedby="mdc-dialog-default-description">
+                    <div class="mdc-dialog__surface">
+                      <div class="mdc-dialog__close mdc-dialog__footer__button--cancel material-icons">close</div>
+                      <header class="mdc-dialog__header">
+                        <h2 id="mdc-dialog-default-label" class="mdc-dialog__header__title">
+                          Thanks for registering!
+                        </h2>
+                      </header>
+                      <section id="mdc-dialog-default-description" class="mdc-dialog__body">
+                        See you at NextGIS Webinar.
+                      </section>
+                      <footer class="mdc-dialog__footer">
+                      </footer>
+                    </div>
+                    <div class="mdc-dialog__backdrop"></div>
+                </div>
+                <div id="mdc-dialog-error"
+                      class="mdc-dialog"
+                      role="alertdialog"
+                      aria-hidden="true">
+                    <div class="mdc-dialog__surface">
+                      <div class="mdc-dialog__close mdc-dialog__footer__button--cancel material-icons">close</div>
+                      <header class="mdc-dialog__header">
+                        <h2 class="mdc-dialog__header__title">
+                          Register failed
+                        </h2>
+                      </header>
+                      <section class="mdc-dialog__body">
+                        Unfortunately, there was some error. Try again.
+                      </section>
+                      <footer class="mdc-dialog__footer">
+                      </footer>
+                    </div>
+                    <div class="mdc-dialog__backdrop"></div>
+                </div>
+            </div>
+        </article>
+
+        <article class="map" id="details">
+            <div class="map-card">
+              <h2 class="map-card__title">«Getting started with NextGIS Web Cloud. From registartion to map collection»</h2>
+              <section class="map-card__text">
+                <br>
+                <table class="descrTable">
+                  <tr>
+                    <td style="width: 40%">
+                      <a href="https://nextgis.com/nextgis-web">NextGIS Web</a> —  server-based Web GIS, designed for storing and organizing multi-user access to geodata and creating web maps. This is our flagship product, around which the entire platform is built.<br><br>
+                      Cloud service <a href="https://nextgis.com/nextgis-com">nextgis.com</a>  is the easiest and most affordable way to get started with NextGIS Web, with it you can create your own full-fledged Web GIS in a few clicks. At the webinar, we will get acquainted with how our cloud works and how to start working with it as comfortably as possible:
+                      <ul>
+                        <li>How to register at nextgis.com</li>
+                        <li>Add different data to it - vector and raster, as well as styles for them</li>
+                        <li>Publish several maps based on this data and configure them</li>
+                        <li>Touch on the mechanism for configuring access rights</li>
+                      </ul>
+                    </td>
+                    <td style="width: 60%"><center><img src="img/ngw_cloud.png" style="position:relative; width:80%"></center></td>
+                  </tr>
+                </table>
+                <div class="descrText"><a href="https://nextgis.com/nextgis-web">NextGIS Web</a> —  server-based Web GIS, designed for storing and organizing multi-user access to geodata and creating web maps. This is our flagship product, around which the entire platform is built.<br><br>
+                Cloud service <a href="https://nextgis.com/nextgis-com">nextgis.com</a>  is the easiest and most affordable way to get started with NextGIS Web, with it you can create your own full-fledged Web GIS in a few clicks. At the webinar, we will get acquainted with how our cloud works and how to start working with it as comfortably as possible:
+                <ul>
+                  <li>How to register at nextgis.com</li>
+                  <li>Add different data to it - vector and raster, as well as styles for them</li>
+                  <li>Publish several maps based on this data and configure them</li>
+                  <li>Touch on the mechanism for configuring access rights</li>
+                </ul>
+                </div>
+                <img class="descrImage" src="img/ngw_cloud.png">
+                <br><br>
+                <p>The webinar will take place on March 23, 2021 on the Zoom platform. To get a link to a meeting, <a href="#registration">register</a>!</p>
+                <p>Any questions? Contact us: <nobr>education@nextgis.com</nobr></p>
+
+              </section>
+            </div>
+        </article>
+
+
+        <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__right pull-right">
+                <a href="mailto:info@nextgis.com">education@nextgis.com</a>
+                <a class="footer__phone" href="tel:+7 968 730-52-52">+7 968 730-52-52</a>
+                <ul class="social-links list-inline hidden-xs">
+                    <li class="social-links__item">
+                        <a class="social-link social-link--twtr" href="http://twitter.com/nextgis" target="_blank"></a>
+                    </li>
+                    <li class="social-links__item">
+                        <a class="social-link social-link--fb" href="http://www.facebook.com/pages/NextGIS/141140662637244?sk=wall" target="_blank"></a>
+                    </li>
+                    <li class="social-links__item">
+                        <a class="social-link social-link--telegram" href="https://t.me/nextgis_chat" target="_blank"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__copyright">
+                © NextGIS <script>document.write(new Date().getFullYear())</script></div>
+        </div>
+    </footer>
+    </div>
+    <script src="js/dataset.js"></script>
+    <script src="js/flexibility.js"></script>
+    <script src="js/material-components-web.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>mdc.autoInit()</script>
+</body>
+</html>
