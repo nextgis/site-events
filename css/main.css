@@ -775,7 +775,7 @@ input:-webkit-autofill {
 /* Map */
 .map{
 	position: relative;
-	height: 860px;
+	height: 930px;
 	overflow: hidden;
 }
 
@@ -820,7 +820,7 @@ input:-webkit-autofill {
 }
 
 
-@media (max-width: 1200px){
+@media (max-width: 1000px){
  	#map{
 	 	position: relative;
 	}
@@ -846,7 +846,7 @@ input:-webkit-autofill {
 	line-height: 1.5
 }
 
- @media (max-width: 1200px){
+ @media (max-width: 1000px){
  	.map-card{
 	 	position: relative;
 	 	width: 100%;
