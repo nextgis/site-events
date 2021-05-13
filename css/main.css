@@ -42,6 +42,15 @@ a:active{
 	}
 }
 
+.section{
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+}
+
+.section__title{
+	margin-bottom: 2rem;
+}
+
 
 /* Typography */
 h1,h2{
@@ -798,10 +807,10 @@ input:-webkit-autofill {
 }
 
 .descrText {
-		width: 80%;
-		position: relative;
-		left: 10%;
-		text-align: justify;
+	width: 80%;
+	position: relative;
+	left: 10%;
+	text-align: justify;
 }
 
 @media (max-width: 1400px){
