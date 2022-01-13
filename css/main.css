@@ -98,6 +98,20 @@ a{
 	clear: both;
 }
 
+.d-flex{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.row-sm{
+	margin-left: -15px;
+	margin-right: -15px;
+}
+.col-sm{
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
 /* Buttons */
 
 .mdc-button{
@@ -325,6 +339,7 @@ input:-webkit-autofill {
 	display: inline-block;
 	position: absolute;
 	right: 0;
+	left: 0;
 	top: -65px;
 	margin-top: -9px;
 	/*font-weight: 600;*/
@@ -1219,4 +1234,45 @@ input:-webkit-autofill {
 	margin-left: auto;
 	margin-right: auto;
 	top: 32px;
+}
+
+
+.reviews{
+	background-color: #0d2942;
+	color: #fff;
+	padding-bottom: 6rem;
+}
+
+.ng-sheet{
+	background-color: #fff;
+	padding: 16px 16px 24px;
+	border-radius: 6px;
+	color: #000;
+}
+
+.reviews .ng-sheet{
+	margin-bottom: 24px;
+}
+.review-item{
+	top: 0;
+	position: relative;
+	transition: all .3s;
+}
+
+.review-item:hover{
+	top: -5px;
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.review-item__header{
+	margin-bottom: 16px;
+}
+.review-item__title{
+	font-size: 18px;
+	font-family: "Open Sans", Arial, sans-serif;
+	font-weight: 600;
+}
+.review-item__meta{
+	opacity: .6;
+	font-size: .95rem
 }
