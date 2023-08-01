@@ -1,0 +1,49 @@
+{
+  "app": {
+    "smthWentWrong": "Что-то пошло не так...",
+    "terms": "Пользовательское соглашение",
+    "privacy": "Политика конфиденциальности",
+    "contacts": "Контакты"
+  },
+  "subscription": {
+    "already_subscribed": "Пользователь с таким адресом уже зарегистрирован.",
+    "allEventsSubscriptionSuccessTitle": "Подписка на рассылку оформлена",
+    "allEventsSubscriptionSuccessDescr_p1": "Вы подписались на рассылку о событиях NextGIS. Мы будем присылать вам письма о всех грядущих событиях на адрес",
+    "allEventsSubscriptionSuccessDescr_p2": "За день до события пришлем ссылку на встречу",
+    "eventSubscripitionSuccessTitle": "Вы зарегистрированы на событие «{title}»",
+    "eventSubscriptionSuccessDescr_link": "За день до события пришлем ссылку на встречу на адрес",
+    "eventSubscriptionSuccessDescr_details": "Мы пришлем все детали на ваш адрес",
+    "eventSubscriptionSuccessDescr_allEvents": "Также мы включили вас в список рассылки о всех событиях NextGIS. Вы будете получать анонсы встреч, а также ссылки для присоединения к онлайн-мероприятиям.",
+    "errorTitle": "При регистрации возникла ошибка",
+    "errorDescription": "Попробуйте отправить форму еще раз.",
+    "yourName": "Ваше имя",
+    "email": "Email",
+    "company": "Компания (необязательно)"
+  },
+  "event": {
+    "video": "Видео",
+    "presentation": "Презентация",
+    "schedule": "Расписание",
+    "eventIsHappened": "Событие состоялось",
+    "goToArchive": "Вернуться в архив",
+    "goToEventList": "Вернуться к списку событий",
+    "eventWebsite": "Сайт мероприятия",
+    "registration": "Регистрация",
+    "subscribeToAllEventsCheckbox": "Хочу получать рассылку о будущих событиях NextGIS, чтобы не регистрироваться на каждое мероприятие отдельно",
+    "resources": "Материалы",
+    "eventsHappened": "Прошедшие мероприятия",
+    "goToEventsHappened": "Ко всем прошедшим мероприятиям"
+  },
+  "error": {
+    "404title": "Страница не существует",
+    "404description": "Проверьте ссылку или <a id='error-report-link' href='mailto:edu{'@'}nextgis.com?subject=Non-existent page on nextgis.com/events&body=My action on the website led me to a 404 page'>дайте нам знать</a>.",
+    "goBack": "Go back",
+    "required": "Заполните обязательное поле",
+    "email": "Введите правильный e-mail"
+  },
+  "nav": {
+    "events": "События",
+    "archive": "Архив",
+    "subscribe": "Подписаться"
+  }
+}
