@@ -1,11 +1,9 @@
 const getLocaleByHost = () => {
-  const host = window.location.host
-  console.log(import.meta.env.VITE_RU_HOSTS.split(',').includes(host))
+  const host = window.location.host.split(':')[0]
   return import.meta.env.VITE_RU_HOSTS.split(',').includes(host) ? 'ru' : 'en'
 }
 
-const locale =
-  import.meta.env.MODE === 'development' ? document.documentElement.lang : getLocaleByHost()
+const locale = getLocaleByHost()
 
 const createContext = () => {
   return {
