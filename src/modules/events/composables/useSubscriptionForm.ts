@@ -1,11 +1,13 @@
 import { watch, type Ref, ref } from 'vue'
 import { useAsyncState } from '@vueuse/core'
 import { useQuasar } from 'quasar'
-import { subscribeToEvent, subscribeToAllEvents } from '@/modules/events/api/eventsApi'
+import { storeToRefs } from 'pinia'
+import { subscribeToEvent } from '@/modules/events/api/eventsApi'
 import EventErrorService from '../EventErrorService'
 import EventSubscriptionSuccessDialog from '@/modules/events/components/EventSubscriptionSuccessDialog.vue'
 import AllEventsSubscriptionSuccessDialog from '@/modules/events/components/AllEventsSubscriptionSuccessDialog.vue'
 import SubscriptionErrorDialog from '@/modules/events/components/SubscriptionErrorDialog.vue'
+import { useGeneralInfoStore } from '@/modules/generalInfo/generalInfoStore'
 import { type UserData } from '@/modules/events/interfaces/UserData'
 import { type Event } from '@/modules/events/interfaces/Event'
 import { AxiosError } from 'axios'
@@ -23,10 +25,19 @@ const useSubscriptionForm = ({
 }: UseSubscriptionFormOptions) => {
   const $q = useQuasar()
 
-  const callSubscribeApi = () =>
-    !shouldSubscribeForAllEvents.value && eventData?.value
-      ? subscribeToEvent(eventData.value.id, userData.value)
-      : subscribeToAllEvents(userData.value)
+  const generalInfoStore = useGeneralInfoStore()
+  const { generalInfo } = storeToRefs(generalInfoStore)
+
+  const callSubscribeApi = () => {
+    if (!shouldSubscribeForAllEvents.value && eventData?.value) {
+      return subscribeToEvent(eventData.value.id, userData.value)
+    }
+
+    if (shouldSubscribeForAllEvents.value && generalInfo.value) {
+      return subscribeToEvent(Number(generalInfo.value.id_all_events), userData.value)
+    }
+    throw new Error('Insufficient data from store to make a request')
+  }
 
   const eventErrorService = new EventErrorService()
   const errors: Ref<string[]> = ref(eventErrorService.errors)

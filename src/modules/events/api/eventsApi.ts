@@ -26,9 +26,4 @@ const getEvent = async (id: number) =>
 const subscribeToEvent = (id: number, userData: UserData) =>
   httpClient.post(`event/${id}/subscribe`, userData).then((resp) => resp.data)
 
-const subscribeToAllEvents = (userData: UserData) =>
-  httpClient
-    .post(`event/${import.meta.env.VITE_ALL_EVENTS_ID_RU}/subscribe`, userData)
-    .then((resp) => resp.data)
-
-export { getEvents, getEvent, subscribeToEvent, subscribeToAllEvents }
+export { getEvents, getEvent, subscribeToEvent }
