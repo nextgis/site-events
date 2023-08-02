@@ -27,16 +27,16 @@ export default ({ mode }: { mode: any }) => {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url))
       }
+    },
+    server: {
+      proxy: {
+        '/wp-json/ng/v1/': {
+          target: process.env.VITE_API_URL_RU,
+          changeOrigin: true,
+          secure: false
+        }
+      }
     }
-    // server: {
-    //   proxy: {
-    //     '/wp-json/ng/v1/': {
-    //       target: process.env.VITE_API_URL_RU,
-    //       changeOrigin: true,
-    //       secure: false
-    //     }
-    //   }
-    // }
   }
 
   return defineConfig(configOptions)
