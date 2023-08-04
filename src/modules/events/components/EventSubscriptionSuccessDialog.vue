@@ -5,9 +5,7 @@
         <div class="q-mb-lg">
           <q-icon name="mdi-party-popper" color="positive" size="xl" class="q-mb-sm"></q-icon>
           <h5>
-            {{
-              t('subscription.eventSubscripitionSuccessTitle', { title: props.eventData.title })
-            }}»
+            {{ t('subscription.eventSubscripitionSuccessTitle', { title: props.eventData.title }) }}
           </h5>
         </div>
         <p v-if="props.eventData.address === 'online'">

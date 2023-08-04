@@ -10,7 +10,7 @@
     "allEventsSubscriptionSuccessTitle": "Subscription confirmed",
     "allEventsSubscriptionSuccessDescr_p1": "You have subscribed to the NextGIS events mailing list. We will send you emails about all upcoming events",
     "allEventsSubscriptionSuccessDescr_p2": "A link to the event will be sent one day before the event",
-    "eventSubscripitionSuccessTitle": "You are registered for the event «{title}»",
+    "eventSubscripitionSuccessTitle": "You are registered for the event “{title}”",
     "eventSubscriptionSuccessDescr_link": "A link to the event will be sent to the address one day before the event",
     "eventSubscriptionSuccessDescr_details": "We will send all the details to your address",
     "eventSubscriptionSuccessDescr_allEvents": "We have also added you to the NextGIS events mailing list. You will receive announcements for meetings as well as links to join online events.",
