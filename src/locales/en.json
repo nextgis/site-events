@@ -6,16 +6,16 @@
     "contacts": "Contacts"
   },
   "subscription": {
-    "already_subscribed": "Пользователь с таким адресом уже зарегистрирован.",
-    "allEventsSubscriptionSuccessTitle": "Подписка на рассылку оформлена",
-    "allEventsSubscriptionSuccessDescr_p1": "Вы подписались на рассылку о событиях NextGIS. Мы будем присылать вам письма о всех грядущих событиях на адрес",
-    "allEventsSubscriptionSuccessDescr_p2": "За день до события пришлем ссылку на встречу",
-    "eventSubscripitionSuccessTitle": "Вы зарегистрированы на событие «{title}»",
-    "eventSubscriptionSuccessDescr_link": "За день до события пришлем ссылку на встречу на адрес",
-    "eventSubscriptionSuccessDescr_details": "Мы пришлем все детали на ваш адрес",
-    "eventSubscriptionSuccessDescr_allEvents": "Также мы включили вас в список рассылки о всех событиях NextGIS. Вы будете получать анонсы встреч, а также ссылки для присоединения к онлайн-мероприятиям.",
-    "errorTitle": "При регистрации возникла ошибка",
-    "errorDescription": "Попробуйте отправить форму еще раз.",
+    "already_subscribed": "The user with this address is already registered.",
+    "allEventsSubscriptionSuccessTitle": "Subscription confirmed",
+    "allEventsSubscriptionSuccessDescr_p1": "You have subscribed to the NextGIS events mailing list. We will send you emails about all upcoming events",
+    "allEventsSubscriptionSuccessDescr_p2": "A link to the event will be sent one day before the event",
+    "eventSubscripitionSuccessTitle": "You are registered for the event «{title}»",
+    "eventSubscriptionSuccessDescr_link": "A link to the event will be sent to the address one day before the event",
+    "eventSubscriptionSuccessDescr_details": "We will send all the details to your address",
+    "eventSubscriptionSuccessDescr_allEvents": "We have also added you to the NextGIS events mailing list. You will receive announcements for meetings as well as links to join online events.",
+    "errorTitle": "An error occurred during registration",
+    "errorDescription": "Please try submitting the form again.",
     "yourName": "Your name",
     "email": "Email",
     "company": "Company (optional)"
@@ -23,16 +23,16 @@
   "event": {
     "video": "Video",
     "presentation": "Presentation",
-    "schedule": "Расписание",
-    "eventIsHappened": "Событие состоялось",
-    "goToArchive": "Вернуться в архив",
-    "goToEventList": "Вернуться к списку событий",
-    "eventWebsite": "Сайт мероприятия",
-    "registration": "Регистрация",
-    "subscribeToAllEventsCheckbox": "Хочу получать рассылку о будущих событиях NextGIS, чтобы не регистрироваться на каждое мероприятие отдельно",
-    "resources": "Материалы",
-    "eventsHappened": "Прошедшие мероприятия",
-    "goToEventsHappened": "Ко всем прошедшим мероприятиям"
+    "schedule": "Schedule",
+    "eventIsHappened": "Event has happened",
+    "goToArchive": "Go back to the archive",
+    "goToEventList": "Go back to the event list",
+    "eventWebsite": "Event website",
+    "registration": "Registration",
+    "subscribeToAllEventsCheckbox": "I want to receive notifications about future NextGIS events, so I don't have to register for each event separately",
+    "resources": "Outcomes",
+    "eventsHappened": "Past events",
+    "goToEventsHappened": "Go to all past events"
   },
   "error": {
     "404title": "Page does not exist",
@@ -42,8 +42,8 @@
     "email": "Please enter a valid email address"
   },
   "nav": {
-    "events": "События",
-    "archive": "Архив",
-    "subscribe": "Подписаться"
+    "events": "Events",
+    "archive": "Archive",
+    "subscribe": "Subscribe"
   }
 }
