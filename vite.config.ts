@@ -10,6 +10,7 @@ import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 export default ({ mode }: { mode: any }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd()) }
   const configOptions = {
+    base: process.env.VITE_BASE_URL,
     plugins: [
       vue({
         template: { transformAssetUrls }
