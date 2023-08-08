@@ -3,11 +3,7 @@
     <div class="container-md flex items-center">
       <div class="the-header__name flex items-center">
         <div class="the-header__logo">
-          <a class="nolink" href="https://nextgis.com">
-            <!-- <picture class="the-header__logo-pic">
-              <source srcset="/img/nextgis_logo.svg" />
-              <img src="/img/nextgis_logo.svg" alt="NextGIS" />
-            </picture> -->
+          <a class="nolink" :href="nextisUrl">
             <svg
               class="the-header__logo-pic"
               data-v-d64f80a8=""
@@ -90,6 +86,9 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import TheHeaderMenu from './TheHeaderMenu.vue'
+import { useI18n } from 'vue-i18n'
+const { locale } = useI18n()
+const nextisUrl = `https://nextgis.${locale.value === 'ru' ? 'ru' : 'com'}`
 </script>
 
 <style scoped lang="scss">
