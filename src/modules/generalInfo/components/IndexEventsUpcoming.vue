@@ -31,6 +31,5 @@ const { upcomingEvents, isLoading, error } = storeToRefs(upcomingEventsStore)
 <style scoped lang="scss">
 .index-events-upcoming {
   position: relative;
-  min-height: 300px;
 }
 </style>

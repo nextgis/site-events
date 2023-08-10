@@ -1,6 +1,6 @@
 <template>
   <div class="app-page">
-    <h1 class="text-h3 q-mt-xl q-mb-xl">{{ t('event.schedule') }}</h1>
+    <h1 class="text-h3 q-pt-xl q-pb-xl">{{ t('event.schedule') }}</h1>
     <div class="row">
       <div class="col col-md-8">
         <EventList

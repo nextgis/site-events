@@ -26,7 +26,7 @@ useAsyncStateToStore(
 </script>
 
 <template>
-  <div class="container-md app-page">
+  <div class="container-md">
     <IndexHero />
     <IndexEventsUpcoming />
   </div>

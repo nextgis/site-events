@@ -40,7 +40,6 @@ const { happenedEvents, isLoading, error } = storeToRefs(happenedEventsStore)
 
 <style scoped lang="scss">
 .index-events-happened {
-  min-height: 300px;
   position: relative;
 }
 </style>

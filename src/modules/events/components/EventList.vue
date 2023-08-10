@@ -25,7 +25,7 @@
             </AppIconText>
           </div>
           <div
-            class="event-card__meta"
+            class="event-card__meta gt-sm"
             :class="{ 'q-ml-nsm': event.address === 'online' }"
             v-if="event.address"
           >
@@ -46,7 +46,11 @@
         <h6 class="event-card__title" :class="{ 'q-my-sm': type === 'upcoming' }">
           {{ event.title }}
         </h6>
-        <div class="event-card__summary" v-if="type === 'upcoming'" v-html="event.summary"></div>
+        <div
+          class="event-card__summary gt-xs"
+          v-if="type === 'upcoming'"
+          v-html="event.summary"
+        ></div>
         <div
           class="event-card__meta-info text-blue-grey-4 text-body2 flex q-mt-sm"
           v-if="type === 'happened'"
@@ -56,12 +60,12 @@
               {{ formatEventDates(event.date_start, event.date_end) }}
             </AppIconText>
           </div>
-          <div class="event-card__meta" v-if="event.video">
+          <div class="event-card__meta gt-xs" v-if="event.video">
             <AppIconText :href="event.video" icon="mdi-youtube" target="_blank">
               {{ t('event.video') }}
             </AppIconText>
           </div>
-          <div class="event-card__meta" v-if="event.presentation">
+          <div class="event-card__meta gt-xs" v-if="event.presentation">
             <AppIconText :href="event.presentation" icon="mdi-presentation" target="_blank">
               {{ t('event.presentation') }}
             </AppIconText>
@@ -157,6 +161,12 @@ const { events } = toRefs(props)
       height: 135px;
       border-radius: $generic-border-radius;
       margin-right: 24px;
+
+      @media (max-width: $breakpoint-sm-min) {
+        width: 75px;
+        height: 75px;
+        margin-right: 12px;
+      }
     }
 
     &__info {
@@ -168,10 +178,14 @@ const { events } = toRefs(props)
 .event-list--happened {
   .event-card {
     &__pic {
-      width: 100px;
-      height: 100px;
+      width: 75px;
+      height: 75px;
       border-radius: 50%;
       margin-right: 24px;
+
+      @media (max-width: $breakpoint-sm-min) {
+        margin-right: 12px;
+      }
     }
     &:hover {
       .event-card__title {

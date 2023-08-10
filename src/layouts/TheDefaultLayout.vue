@@ -1,6 +1,6 @@
 <template>
   <q-layout class="the-default-layout" view="hhh LpR fff">
-    <TheHeader class="text-black q-mt-md" />
+    <TheHeader class="the-default-layout__header text-black q-mt-md" />
     <q-page-container class="q-px-md">
       <q-page class="container-md">
         <slot></slot>
@@ -21,4 +21,12 @@ import TheHeader from '@/shared/components/TheHeader.vue'
 import TheFooter from '@/shared/components/TheFooter.vue'
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.the-default-layout {
+  &__header {
+    @media (max-width: $breakpoint-md-min) {
+      margin-top: 0 !important;
+    }
+  }
+}
+</style>

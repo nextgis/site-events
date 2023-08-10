@@ -1,7 +1,7 @@
 <template>
   <q-layout class="the-no-header-layout" view="hhh LpR fff">
     <q-page-container class="the-no-header-layout__page-container q-px-md">
-      <q-page class="q-pt-md" :class="isFluid ? '' : 'container-md'">
+      <q-page class="the-no-header-layout__page q-pt-md" :class="isFluid ? '' : 'container-md'">
         <slot></slot>
       </q-page>
     </q-page-container>
@@ -32,6 +32,12 @@ const { isFluid } = toRefs(props)
 .the-no-header-layout {
   &__page-container {
     padding-top: 0 !important;
+  }
+
+  &__page {
+    @media (max-width: $breakpoint-md-min) {
+      padding-top: 0 !important;
+    }
   }
 }
 </style>

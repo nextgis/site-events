@@ -78,7 +78,7 @@
         <RouterLink class="text-link" to="/">Events</RouterLink>
       </div>
       <q-space />
-      <TheHeaderMenu />
+      <TheHeaderMenu class="gt-xs" />
     </div>
   </q-header>
 </template>

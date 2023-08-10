@@ -5,7 +5,7 @@
   >
     <div class="index-hero__bg"></div>
     <TheHeader class="text-white q-dark" />
-    <div class="inedx-hero__content text-center">
+    <div class="index-hero__content text-center">
       <h1 class="text-h3" v-html="generalInfo.hero_title" />
       <div class="text-h6 q-mt-md" v-html="generalInfo.hero_description" />
       <q-btn
