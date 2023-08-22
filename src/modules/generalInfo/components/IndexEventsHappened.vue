@@ -7,14 +7,14 @@
     <div class="row">
       <div class="col col-md-8 col-lg-6">
         <EventList
-          :events="happenedEvents"
+          :events="lastHappenedEvents"
           type="happened"
           :is-loading="isLoading"
           :is-failed="!!error"
         />
         <RouterLink
           v-if="happenedEvents.length > 5"
-          class="text-link text-subtitle1 text-weight-medium flex inline items-center q-mt-md gt-sm"
+          class="text-link text-subtitle1 text-weight-medium inline items-center q-mt-md"
           to="/happened"
         >
           {{ t('event.goToEventsHappened') }}
@@ -31,11 +31,14 @@ import { useI18n } from 'vue-i18n'
 import { RouterLink } from 'vue-router'
 import { useHappenedEventsStore } from '@/modules/events/happenedEventsStore'
 import EventList from '@/modules/events/components/EventList.vue'
+import { computed, type ComputedRef } from 'vue'
+import type { Event } from '@/modules/events/interfaces/Event'
 
 const { t } = useI18n()
 
 const happenedEventsStore = useHappenedEventsStore()
 const { happenedEvents, isLoading, error } = storeToRefs(happenedEventsStore)
+const lastHappenedEvents: ComputedRef<Event[]> = computed(() => happenedEvents.value.slice(0, 5))
 </script>
 
 <style scoped lang="scss">
