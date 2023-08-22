@@ -36,6 +36,7 @@ const { generalInfo } = storeToRefs(generalInfoStore)
   height: 653px;
   margin-left: -24px;
   margin-right: -24px;
+  overflow: hidden;
 
   &__bg {
     position: absolute;

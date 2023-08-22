@@ -29,7 +29,7 @@ const layout: ComputedRef<string> = computed(() => {
 </script>
 
 <template>
-  <component :is="layout" v-bind="route?.meta?.layoutProps || {}">
+  <component class="app-layout" :is="layout" v-bind="route?.meta?.layoutProps || {}">
     <q-inner-loading v-if="isLoading" showing color="primary" />
     <div class="text-center" v-else-if="isFailed">
       Something went wrong. Try to reload the page.
