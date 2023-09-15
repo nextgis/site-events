@@ -12,7 +12,7 @@
         no-caps
         color="white"
         text-color="dark"
-        size="xl"
+        :size="$q.screen.xs ? 'lg' : 'xl'"
         class="index-hero__button q-mt-xl"
         to="#subscribe"
         >{{ generalInfo.hero_button_text }}</q-btn
@@ -65,8 +65,6 @@ const { generalInfo } = storeToRefs(generalInfoStore)
   &__button {
     width: 300px;
     height: 72px;
-    @media (max-width: $breakpoint-sm-min) {
-    }
   }
 
   :deep(.the-header) {

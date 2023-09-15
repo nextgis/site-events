@@ -2,7 +2,7 @@ import './assets/main.scss'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import { Quasar, Dialog } from 'quasar'
+import { Quasar, Dialog, Screen } from 'quasar'
 
 // Import icon libraries
 import '@quasar/extras/roboto-font/roboto-font.css'
@@ -30,7 +30,8 @@ app.use(VueYtframe)
 app.use(Quasar, {
   iconSet,
   plugins: {
-    Dialog
+    Dialog,
+    Screen
   },
   config: {
     lang: {
