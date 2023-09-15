@@ -119,6 +119,12 @@ h1, h2, h3, h4, h5, h6,
     font-size: 1.15rem !important;
   }
 }
+.text-h3{
+  @media (max-width: $breakpoint-sm-min){
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+  }
+}
 
 .huge-text{
   font-size: 175px !important;

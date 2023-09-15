@@ -65,6 +65,8 @@ const { generalInfo } = storeToRefs(generalInfoStore)
   &__button {
     width: 300px;
     height: 72px;
+    @media (max-width: $breakpoint-sm-min) {
+    }
   }
 
   :deep(.the-header) {
