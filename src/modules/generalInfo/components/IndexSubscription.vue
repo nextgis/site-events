@@ -5,7 +5,7 @@
   >
     <div class="index-subscription__bg"></div>
     <slot name="prepend"></slot>
-    <div class="index-subscription__inner q-px-lg fit">
+    <div class="index-subscription__inner fit">
       <h2 class="text-h4 q-mb-lg">{{ generalInfo.subscribe_title }}</h2>
       <p class="text-left q-mb-lg" v-html="generalInfo.subscribe_description"></p>
       <SubscriptionForm
@@ -93,7 +93,7 @@ const { subscribe, isSubscribeFormSending, errors } = useSubscriptionForm({
 
   &__inner {
     position: relative;
-    max-width: 700px;
+    max-width: 640px;
     padding-top: 64px;
     padding-bottom: 80px;
   }
