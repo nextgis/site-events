@@ -10,7 +10,7 @@ import IndexSubscription from '@/modules/generalInfo/components/IndexSubscriptio
 
 const upcomingEventsStore = useUpcomingEventsStore()
 useAsyncStateToStore(
-  async () => getEvents({ isHappened: false }),
+  async () => getEvents({ isHappened: false, sorting: 'asc' }),
   upcomingEventsStore,
   'upcomingEvents',
   []
@@ -18,7 +18,7 @@ useAsyncStateToStore(
 
 const happenedEventsStore = useHappenedEventsStore()
 useAsyncStateToStore(
-  async () => getEvents({ isHappened: true }),
+  async () => getEvents({ isHappened: true, sorting: 'desc' }),
   happenedEventsStore,
   'happenedEvents',
   []

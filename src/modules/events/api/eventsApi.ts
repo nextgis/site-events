@@ -5,6 +5,7 @@ import type { EventFromApi, Event } from '../interfaces/Event'
 
 interface getEventsOptions {
   isHappened: boolean
+  sorting: 'asc' | 'desc'
 }
 
 const formatEvent = (event: EventFromApi): Event => {
@@ -15,9 +16,9 @@ const formatEvent = (event: EventFromApi): Event => {
   }
 }
 
-const getEvents = ({ isHappened }: getEventsOptions) =>
+const getEvents = ({ isHappened, sorting }: getEventsOptions) =>
   httpClient
-    .get(`/events?happened=${isHappened}`)
+    .get(`/events?happened=${isHappened}&sorting=${sorting}`)
     .then((resp) => resp.data?.map((event: EventFromApi) => formatEvent(event)))
 
 const getEvent = async (id: number) =>

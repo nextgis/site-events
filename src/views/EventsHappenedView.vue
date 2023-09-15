@@ -27,7 +27,7 @@ const { t } = useI18n()
 const happenedEventsStore = useHappenedEventsStore()
 const { happenedEvents, isLoading, error } = storeToRefs(happenedEventsStore)
 useAsyncStateToStore(
-  async () => getEvents({ isHappened: true }),
+  async () => getEvents({ isHappened: true, sorting: 'desc' }),
   happenedEventsStore,
   'happenedEvents',
   []

@@ -26,7 +26,7 @@ const { t } = useI18n()
 const upcomingEventsStore = useUpcomingEventsStore()
 const { upcomingEvents, isLoading, error } = storeToRefs(upcomingEventsStore)
 useAsyncStateToStore(
-  async () => getEvents({ isHappened: false }),
+  async () => getEvents({ isHappened: false, sorting: 'asc' }),
   upcomingEventsStore,
   'upcomingEvents',
   []
