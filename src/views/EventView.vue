@@ -74,7 +74,7 @@
             <a :href="event.website" target="_blank">{{ event.website }}</a>
           </q-card-section>
         </q-card>
-        <q-card class="bg-grey-2" flat v-if="!isHappened">
+        <q-card class="bg-grey-2" flat v-if="!isHappened && event.type !== 'outer'">
           <q-card-section class="event-subscription-card q-pa-lg">
             <h5 class="q-mb-lg">{{ t('event.registration') }}</h5>
             <SubscriptionForm
