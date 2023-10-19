@@ -26,7 +26,7 @@ app.use(createPinia())
 app.use(router)
 app.use(i18n)
 app.use(VueYtframe)
-// @ts-expect-error
+
 app.use(Quasar, {
   iconSet,
   plugins: {
