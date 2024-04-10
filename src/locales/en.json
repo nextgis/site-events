@@ -33,7 +33,8 @@
     "resources": "Outcomes",
     "eventsHappened": "Past events",
     "goToEventsHappened": "Go to all past events",
-    "signup": "Sign up"
+    "signup": "Sign up",
+    "noEvents": "Currently, there are no events."
   },
   "error": {
     "404title": "Page does not exist",

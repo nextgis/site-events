@@ -6,7 +6,6 @@
         <EventList
           :events="happenedEvents"
           type="happened"
-          class="q-pt-md"
           :is-loading="isLoading"
           :is-failed="!!error"
         />

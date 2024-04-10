@@ -2,78 +2,81 @@
   <q-inner-loading v-if="isLoading" showing color="primary" />
   <div v-else-if="isFailed">{{ t('app.smthWentWrong') }}</div>
   <div else :class="['event-list', `event-list--${type}`]">
-    <q-card
-      v-for="(event, index) in events"
-      :key="index"
-      class="event-card q-mb-lg flex no-wrap"
-      :class="{ 'q-pa-none items-center': type === 'happened', 'q-pa-md ': type === 'upcoming' }"
-      flat
-      :bordered="type === 'upcoming'"
-    >
-      <picture class="event-card__pic">
-        <source :srcset="event.preview_image_url || undefined" />
-        <img :src="event.preview_image_url || undefined" />
-      </picture>
-      <div class="event-card__info">
-        <div
-          class="event-card__meta-info text-blue-grey-4 text-body2 flex"
-          v-if="type === 'upcoming'"
-        >
-          <div class="event-card__meta">
-            <AppIconText icon="mdi-calendar-range">
-              {{ formatEventDates(event.date_start, event.date_end) }}
-            </AppIconText>
-          </div>
+    <template v-if="events.length > 0">
+      <q-card
+        v-for="(event, index) in events"
+        :key="index"
+        class="event-card q-mb-lg flex no-wrap"
+        :class="{ 'q-pa-none items-center': type === 'happened', 'q-pa-md ': type === 'upcoming' }"
+        flat
+        :bordered="type === 'upcoming'"
+      >
+        <picture class="event-card__pic">
+          <source :srcset="event.preview_image_url || undefined" />
+          <img :src="event.preview_image_url || undefined" />
+        </picture>
+        <div class="event-card__info">
           <div
-            class="event-card__meta gt-sm"
-            :class="{ 'q-ml-nsm': event.address === 'online' }"
-            v-if="event.address"
+            class="event-card__meta-info text-blue-grey-4 text-body2 flex"
+            v-if="type === 'upcoming'"
           >
-            <q-chip
-              v-if="event.address === 'online'"
-              outline
-              square
-              :label="event.address"
-              size="sm"
-              color="blue-grey-4"
-              class="q-ma-none q-pa-xs"
-            />
-            <AppIconText v-else icon="mdi-map-marker" :href="event.address_link">
-              {{ event.address }}
-            </AppIconText>
+            <div class="event-card__meta">
+              <AppIconText icon="mdi-calendar-range">
+                {{ formatEventDates(event.date_start, event.date_end) }}
+              </AppIconText>
+            </div>
+            <div
+              class="event-card__meta gt-sm"
+              :class="{ 'q-ml-nsm': event.address === 'online' }"
+              v-if="event.address"
+            >
+              <q-chip
+                v-if="event.address === 'online'"
+                outline
+                square
+                :label="event.address"
+                size="sm"
+                color="blue-grey-4"
+                class="q-ma-none q-pa-xs"
+              />
+              <AppIconText v-else icon="mdi-map-marker" :href="event.address_link">
+                {{ event.address }}
+              </AppIconText>
+            </div>
+          </div>
+          <h6 class="event-card__title" :class="{ 'q-my-sm': type === 'upcoming' }">
+            {{ event.title }}
+          </h6>
+          <div
+            class="event-card__summary gt-xs"
+            v-if="type === 'upcoming'"
+            v-html="event.summary"
+          ></div>
+          <div
+            class="event-card__meta-info text-blue-grey-4 text-body2 flex q-mt-sm"
+            v-if="type === 'happened'"
+          >
+            <div class="event-card__meta">
+              <AppIconText icon="mdi-calendar-range">
+                {{ formatEventDates(event.date_start, event.date_end) }}
+              </AppIconText>
+            </div>
+            <div class="event-card__meta gt-xs" v-if="event.video">
+              <AppIconText :href="event.video" icon="mdi-youtube" target="_blank">
+                {{ t('event.video') }}
+              </AppIconText>
+            </div>
+            <div class="event-card__meta gt-xs" v-if="event.presentation">
+              <AppIconText :href="event.presentation" icon="mdi-presentation" target="_blank">
+                {{ t('event.presentation') }}
+              </AppIconText>
+            </div>
           </div>
         </div>
-        <h6 class="event-card__title" :class="{ 'q-my-sm': type === 'upcoming' }">
-          {{ event.title }}
-        </h6>
-        <div
-          class="event-card__summary gt-xs"
-          v-if="type === 'upcoming'"
-          v-html="event.summary"
-        ></div>
-        <div
-          class="event-card__meta-info text-blue-grey-4 text-body2 flex q-mt-sm"
-          v-if="type === 'happened'"
-        >
-          <div class="event-card__meta">
-            <AppIconText icon="mdi-calendar-range">
-              {{ formatEventDates(event.date_start, event.date_end) }}
-            </AppIconText>
-          </div>
-          <div class="event-card__meta gt-xs" v-if="event.video">
-            <AppIconText :href="event.video" icon="mdi-youtube" target="_blank">
-              {{ t('event.video') }}
-            </AppIconText>
-          </div>
-          <div class="event-card__meta gt-xs" v-if="event.presentation">
-            <AppIconText :href="event.presentation" icon="mdi-presentation" target="_blank">
-              {{ t('event.presentation') }}
-            </AppIconText>
-          </div>
-        </div>
-      </div>
-      <router-link class="event-card__link" :to="`/event/${event.id}`"></router-link>
-    </q-card>
+        <router-link class="event-card__link" :to="`/event/${event.id}`"></router-link>
+      </q-card>
+    </template>
+    <q-banner v-else rounded class="bg-grey-3">{{ t('event.noEvents') }}</q-banner>
   </div>
 </template>
 

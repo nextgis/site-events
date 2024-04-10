@@ -1,5 +1,5 @@
 <template>
-  <article class="index-events-happened index-article">
+  <article class="index-events-happened index-article" v-if="happenedEvents.length > 0">
     <h2 class="text-h4 q-mb-xl">
       <RouterLink to="/happened">{{ t('event.eventsHappened') }}</RouterLink>
     </h2>
