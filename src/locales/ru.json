@@ -41,7 +41,8 @@
     "404description": "Проверьте ссылку или <a id='error-report-link' href='mailto:edu{'@'}nextgis.com?subject=Non-existent page on nextgis.com/events&body=My action on the website led me to a 404 page'>дайте нам знать</a>.",
     "goBack": "Go back",
     "required": "Заполните обязательное поле",
-    "email": "Введите правильный e-mail"
+    "email": "Введите правильный e-mail",
+    "goHome": "Вернуться на главную"
   },
   "nav": {
     "events": "События",

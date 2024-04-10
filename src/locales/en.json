@@ -40,6 +40,7 @@
     "404title": "Page does not exist",
     "404description": "Check your link or <a id='error-report-link' href='mailto:edu{'@'}nextgis.com?subject=Non-existent page on nextgis.com/events&body=My action on the website led me to a 404 page'>let us know</a>.",
     "goBack": "Go back",
+    "goHome": "Back to Home",
     "required": "This field is required",
     "email": "Please enter a valid email address"
   },
