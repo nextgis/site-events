@@ -1,7 +1,7 @@
 <template>
   <q-inner-loading v-if="isLoading" showing color="primary" />
   <div v-else-if="isFailed">{{ t('app.smthWentWrong') }}</div>
-  <div else :class="['event-list', `event-list--${type}`]">
+  <div v-else :class="['event-list', `event-list--${type}`]">
     <template v-if="events.length > 0">
       <q-card
         v-for="(event, index) in events"
