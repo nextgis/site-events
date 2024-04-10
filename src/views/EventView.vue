@@ -71,7 +71,9 @@
         <q-card flat class="bg-grey-2 q-mb-lg" v-if="event.website">
           <q-card-section class="event-website-card q-pa-lg">
             <h5 class="q-mb-md">{{ t('event.eventWebsite') }}</h5>
-            <a :href="event.website" target="_blank">{{ event.website }}</a>
+            <a class="event-website-link" :href="event.website" target="_blank">{{
+              event.website
+            }}</a>
           </q-card-section>
         </q-card>
         <q-card class="bg-grey-2" flat v-if="!isHappened && event.type !== 'outer'">
@@ -274,6 +276,13 @@ const { subscribe, isSubscribeFormSending, errors } = useSubscriptionForm({
   background-image: url('/img/event_subscription_bg.svg');
   background-position: bottom right;
   background-repeat: no-repeat;
+}
+
+.event-website-link {
+  text-overflow: ellipsis;
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .event-subscription__all-events {
