@@ -29,7 +29,7 @@
     </div>
     <slot name="button">
       <q-btn
-        label="Зарегистрироваться"
+        :label="t('event.signup')"
         type="submit"
         color="black"
         :loading="isProcessing"
