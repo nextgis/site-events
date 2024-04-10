@@ -29,7 +29,7 @@ yarn run build
 
 Build image
 ```sh
-docker build -t registry.nextgis.com/wsdocker/events:latest .
-docker buildx build --platform=linux/amd64 -t registry.nextgis.com/wsdocker/events:latest . //for apple with M1
+docker build -t [image_name] .
+docker buildx build --platform=linux/amd64 -t [image_name] . //for apple with M1
 ```
 
