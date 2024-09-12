@@ -19,7 +19,8 @@
     "errorDescription": "Please try submitting the form again.",
     "yourName": "Your name",
     "email": "Email",
-    "company": "Company (optional)"
+    "phone": "Phone",
+    "company": "Company"
   },
   "event": {
     "video": "Video",
@@ -44,7 +45,8 @@
     "goBack": "Go back",
     "goHome": "Back to Home",
     "required": "This field is required",
-    "email": "Please enter a valid email address"
+    "email": "Please enter a valid email address",
+    "phone": "Please enter a valid phone number"
   },
   "nav": {
     "events": "Events",

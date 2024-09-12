@@ -99,6 +99,7 @@
               v-model:company="userCompany"
               v-model:email="userEmail"
               v-model:name="userName"
+              v-model:phone="userPhone"
               :isProcessing="isSubscribeFormSending"
             >
               <template v-slot:appendFields>
@@ -169,16 +170,13 @@
 
 <script setup lang="ts">
 import { ref, type Ref, computed, type ComputedRef } from "vue";
-// import { show404 } from '@/router'
 import { isAfter, parseUTCDate } from "@/utils/dateTimeUtils";
 import { useI18n } from "vue-i18n";
-// import { useGetEventMemoized } from "@/composables/events/useGetEventMemoized";
 import { useSubscriptionForm } from "@/composables/events/useSubscriptionForm";
 import { useContext } from "@/composables/shared/useContext";
 import TheHeader from "@/components/shared/TheHeader.vue";
 import SubscriptionForm from "@/components/events/SubscriptionForm.vue";
 import AppIconText from "@/components/shared/AppIconText.vue";
-import { type UserData } from "@/interfaces/UserData";
 import { formatEventDates } from "@/utils/eventUtils";
 import { getEvent } from "@/api/eventsApi";
 
@@ -243,9 +241,6 @@ watchEffect(() => {
   }
 });
 
-const userName: Ref<string | undefined> = ref(undefined);
-const userEmail: Ref<string | undefined> = ref(undefined);
-const userCompany: Ref<string | undefined> = ref(undefined);
 const shouldSubscribeForAllEvents: Ref<boolean> = ref(false);
 
 const isHappened: ComputedRef<boolean | undefined> = computed(() =>
@@ -286,16 +281,15 @@ const videoUrl: ComputedRef<string | undefined> = computed(() => {
   return undefined;
 });
 
-const userData = computed(
-  (): UserData => ({
-    name: userName.value,
-    email: userEmail.value,
-    company: userCompany.value,
-  })
-);
-
-const { subscribe, isSubscribeFormSending, errors } = useSubscriptionForm({
-  userData,
+const {
+  userName,
+  userEmail,
+  userCompany,
+  userPhone,
+  subscribe,
+  isSubscribeFormSending,
+  errors,
+} = useSubscriptionForm({
   shouldSubscribeForAllEvents,
   eventData: event,
 });

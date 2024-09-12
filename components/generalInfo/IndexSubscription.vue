@@ -15,6 +15,7 @@
         @submit.prevent="subscribe"
         v-model:company="userCompany"
         v-model:email="userEmail"
+        v-model:phone="userPhone"
         v-model:name="userName"
         :isProcessing="isSubscribeFormSending"
       >
@@ -47,33 +48,27 @@
 </template>
 
 <script setup lang="ts">
-import { ref, type Ref, computed } from "vue";
+import { ref } from "vue";
 import { useI18n } from "vue-i18n";
 import { storeToRefs } from "pinia";
 import { useGeneralInfoStore } from "@/store/generalInfoStore";
 import SubscriptionForm from "@/components/events/SubscriptionForm.vue";
 import { useSubscriptionForm } from "@/composables/events/useSubscriptionForm";
-import { type UserData } from "@/interfaces/UserData";
 
 const { t } = useI18n();
 
 const generalInfoStore = useGeneralInfoStore();
 const { generalInfo } = storeToRefs(generalInfoStore);
 
-const userName: Ref<string | undefined> = ref(undefined);
-const userEmail: Ref<string | undefined> = ref(undefined);
-const userCompany: Ref<string | undefined> = ref(undefined);
-
-const userData = computed(
-  (): UserData => ({
-    name: userName.value,
-    email: userEmail.value,
-    company: userCompany.value,
-  })
-);
-
-const { subscribe, isSubscribeFormSending, errors } = useSubscriptionForm({
-  userData,
+const {
+  userName,
+  userEmail,
+  userPhone,
+  userCompany,
+  subscribe,
+  isSubscribeFormSending,
+  errors,
+} = useSubscriptionForm({
   shouldSubscribeForAllEvents: ref(true),
 });
 </script>

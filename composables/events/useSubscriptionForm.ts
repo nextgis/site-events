@@ -13,13 +13,11 @@ import { type UserData } from "@/interfaces/UserData";
 import { type Event } from "@/interfaces/Event";
 
 interface UseSubscriptionFormOptions {
-  userData: Ref<UserData>;
   shouldSubscribeForAllEvents: Ref<boolean>;
   eventData?: Ref<Event | null>;
 }
 
 const useSubscriptionForm = ({
-  userData,
   shouldSubscribeForAllEvents,
   eventData,
 }: UseSubscriptionFormOptions) => {
@@ -28,6 +26,20 @@ const useSubscriptionForm = ({
 
   const generalInfoStore = useGeneralInfoStore();
   const { generalInfo } = storeToRefs(generalInfoStore);
+
+  const userName: Ref<string | undefined> = ref(undefined);
+  const userEmail: Ref<string | undefined> = ref(undefined);
+  const userPhone: Ref<string | undefined> = ref(undefined);
+  const userCompany: Ref<string | undefined> = ref(undefined);
+
+  const userData = computed(
+    (): UserData => ({
+      name: userName.value,
+      email: userEmail.value,
+      phone: userPhone.value,
+      company: userCompany.value,
+    })
+  );
 
   const callSubscribeApi = () => {
     if (!shouldSubscribeForAllEvents.value && eventData?.value) {
@@ -107,6 +119,10 @@ const useSubscriptionForm = ({
     isSubscrptionSucceded,
     subscriptionError,
     errors,
+    userName,
+    userEmail,
+    userCompany,
+    userPhone,
   };
 };
 
