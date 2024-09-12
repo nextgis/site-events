@@ -1,35 +1,75 @@
-# nextgis_events
+# Nuxt 3 Minimal Starter
 
-This template should help get you started developing with Vue 3 in Vite.
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Recommended IDE Setup
+## Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Make sure to install the dependencies:
 
+```bash
+# npm
+npm install
 
-## Project Setup
+# pnpm
+pnpm install
 
-```sh
-yarn
+# yarn
+yarn install
+
+# bun
+bun install
 ```
 
-### Compile and Hot-Reload for Development
+## Development Server
 
-```sh
-yarn run dev
+Start the development server on `http://localhost:3000`:
+
+```bash
+# npm
+npm run dev
+
+# pnpm
+pnpm run dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+## Production
 
-```sh
-yarn run build
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm run build
+
+# yarn
+yarn build
+
+# bun
+bun run build
 ```
 
-## Docker image
+Locally preview production build:
 
-Build image
-```sh
-docker build -t [image_name] .
-docker buildx build --platform=linux/amd64 -t [image_name] . //for apple with M1
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm run preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
 ```
 
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

@@ -1,0 +1,51 @@
+@forward "quasar/dist/quasar.sass" with (
+  $primary: #3500a5,
+  $secondary: #26a69a,
+  $accent: #4000c7,
+  $dark: #020f3b,
+  $positive: #00a084,
+  $negative: #c10015,
+  $info: #31ccec,
+  $warning: #f2c037,
+  $body-font-size: 16px,
+  $input-font-size: 16px,
+  $button-border-radius: 6px,
+  $generic-border-radius: 6px,
+  $button-font-size: 16px,
+  $h1: (
+    size: 6rem,
+    line-height: 6rem,
+    letter-spacing: -0.01562em,
+    weight: 500
+  ),
+  $h2: (
+    size: 3.75rem,
+    line-height: 3.75rem,
+    letter-spacing: -0.00833em,
+    weight: 500
+  ),
+  $h3: (
+    size: 3rem,
+    line-height: 3.125rem,
+    letter-spacing: normal,
+    weight: 500
+  ),
+  $h4: (
+    size: 2.125rem,
+    line-height: 2.5rem,
+    letter-spacing: 0.00735em,
+    weight: 500
+  ),
+  $h5: (
+    size: 1.5rem,
+    line-height: 2rem,
+    letter-spacing: normal,
+    weight: 500
+  ),
+  $h6: (
+    size: 1.25rem,
+    line-height: 2rem,
+    letter-spacing: 0.0125em,
+    weight: 500
+  )
+);
