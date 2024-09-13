@@ -1,7 +1,7 @@
-import dayjs, { type Dayjs, type UnitType } from "dayjs";
-import utc from "dayjs/plugin/utc";
-import timezone from "dayjs/plugin/timezone";
-import("dayjs/locale/ru");
+import dayjs, { type Dayjs, type OpUnitType, type UnitType } from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+import('dayjs/locale/ru');
 
 type AppDate = Dayjs;
 dayjs.extend(utc);
@@ -22,33 +22,13 @@ const timestampToDate = ({
   return dayjs.utc(timestamp).tz(timezone).locale(locale);
 };
 
-const formatDate = ({
-  date,
-  format,
-}: {
-  date: AppDate;
-  format: string;
-}): string => date.format(format);
+const formatDate = ({ date, format }: { date: AppDate; format: string }): string => date.format(format);
 
-const formatTime = ({
-  date,
-  format,
-}: {
-  date: AppDate;
-  format: string;
-}): string => date.format(format);
+const formatTime = ({ date, format }: { date: AppDate; format: string }): string => date.format(format);
 
 const isBefore = (date: AppDate): boolean => dayjs().isBefore(date);
 const isAfter = (date: AppDate, unit: OpUnitType | undefined): boolean => dayjs().isAfter(date, unit);
+const isSame = (date1: AppDate, date2: AppDate, unit: UnitType | undefined = undefined): boolean =>
+  date1.isSame(date2, unit);
 
-export {
-  getTimestamp,
-  parseUTCDate,
-  timestampToDate,
-  isBefore,
-  isAfter,
-  isSame,
-  formatDate,
-  formatTime,
-  type AppDate,
-};
+export { getTimestamp, parseUTCDate, timestampToDate, isBefore, isAfter, isSame, formatDate, formatTime, type AppDate };

@@ -32,6 +32,7 @@
     "goToEventList": "Go back to the event list",
     "eventWebsite": "Event website",
     "registration": "Registration",
+    "registrationClosed": "Registration is closed",
     "subscribeToAllEventsCheckbox": "I want to receive notifications about future NextGIS events, so I don't have to register for each event separately",
     "resources": "Outcomes",
     "eventsHappened": "Past events",

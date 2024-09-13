@@ -32,6 +32,7 @@
     "goToEventList": "Вернуться к списку событий",
     "eventWebsite": "Сайт мероприятия",
     "registration": "Регистрация",
+    "registrationClosed": "Регистрация закрыта",
     "subscribeToAllEventsCheckbox": "Хочу получать рассылку о будущих событиях NextGIS, чтобы не регистрироваться на каждое мероприятие отдельно",
     "resources": "Материалы",
     "eventsHappened": "Прошедшие мероприятия",
