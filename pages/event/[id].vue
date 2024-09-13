@@ -244,7 +244,7 @@ watchEffect(() => {
 const shouldSubscribeForAllEvents: Ref<boolean> = ref(false);
 
 const isHappened: ComputedRef<boolean | undefined> = computed(() =>
-  event.value ? isAfter(parseUTCDate(event.value?.date_start)) : undefined
+  event.value ? isAfter(parseUTCDate(event.value?.date_end), 'minute') : undefined,
 );
 
 const eventDatesFormatted: ComputedRef<string | null> = computed(

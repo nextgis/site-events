@@ -39,12 +39,7 @@ const formatTime = ({
 }): string => date.format(format);
 
 const isBefore = (date: AppDate): boolean => dayjs().isBefore(date);
-const isAfter = (date: AppDate): boolean => dayjs().isAfter(date);
-const isSame = (
-  date1: AppDate,
-  date2: AppDate,
-  unit: UnitType | undefined = undefined
-): boolean => date1.isSame(date2, unit);
+const isAfter = (date: AppDate, unit: OpUnitType | undefined): boolean => dayjs().isAfter(date, unit);
 
 export {
   getTimestamp,
