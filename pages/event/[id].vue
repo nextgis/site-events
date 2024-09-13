@@ -198,7 +198,7 @@ const eventDatesFormatted: ComputedRef<string | null> = computed(
   () =>
     event.value &&
     formatEventDates({
-      dateStart: event.value.video.date_start,
+      dateStart: event.value.date_start,
       dateEnd: event.value.date_end,
       timezone: defaultTimezone.value,
       timezoneSuffix: defaultTimezoneSuffix.value,
