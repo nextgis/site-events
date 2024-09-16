@@ -16,6 +16,7 @@
   "dependencies": {
     "@pinia/nuxt": "latest",
     "@quasar/extras": "^1.16.11",
+    "@quasar/vite-plugin": "^1.7.0",
     "@vueuse/core": "^10.11.0",
     "axios": "^1.7.2",
     "dayjs": "^1.11.11",

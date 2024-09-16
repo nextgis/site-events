@@ -1,5 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
+import { quasar } from '@quasar/vite-plugin';
+
 export default defineNuxtConfig({
   ssr: true,
   devtools: { enabled: true },
@@ -9,12 +11,21 @@ export default defineNuxtConfig({
   },
   modules: ['@pinia/nuxt', '@nuxtjs/i18n', 'nuxt-quasar-ui'],
   vite: {
+    plugins: [quasar()],
     css: {
       preprocessorOptions: {
         scss: {
           additionalData: '@use "@/assets/styles/quasar-variables.scss" as *;',
         },
       },
+    },
+    build: {
+      commonjsOptions: {
+        transformMixedEsModules: true,
+      },
+    },
+    optimizeDeps: {
+      include: ['quasar'],
     },
   },
   runtimeConfig: {
