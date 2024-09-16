@@ -54,7 +54,7 @@
       <div class="col-12 col-md-5 col-lg-4 offset-md-1">
         <q-card flat class="bg-grey-2 q-mb-lg" v-if="event.website">
           <q-card-section class="event-website-card q-pa-lg">
-            <h5 class="q-mb-md">{{ t('event.eventWebsite') }}</h5>
+            <h6 class="q-mb-sm">{{ t('event.eventWebsite') }}</h6>
             <a class="event-website-link" :href="event.website" target="_blank">{{ event.website }}</a>
           </q-card-section>
         </q-card>
@@ -64,7 +64,7 @@
               {{ t('event.registrationClosed') }}
             </template>
             <template v-else
-              ><h5 class="q-mb-lg">{{ t('event.registration') }}</h5>
+              ><h6 class="q-mb-md">{{ t('event.registration') }}</h6>
               <SubscriptionForm
                 class="event-subscription"
                 @submit.prevent="subscribe"
@@ -94,7 +94,7 @@
         </q-card>
         <q-card class="bg-grey-2" flat v-if="event.video || event.presentation">
           <q-card-section class="event-resources-card q-pa-lg">
-            <h5 class="q-mb-lg">{{ t('event.resources') }}</h5>
+            <h6 class="q-mb-md">{{ t('event.resources') }}</h6>
             <div class="q-gutter-y-md q-mt-none">
               <div class="event-resources__video">
                 <iframe

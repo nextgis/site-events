@@ -1,6 +1,6 @@
 <template>
   <q-form class="subscription-form" v-bind="$attrs">
-    <div class="q-gutter-lg q-my-lg">
+    <div class="q-gutter-md q-my-lg">
       <slot name="prependFields"></slot>
       <q-input
         bg-color="white"
@@ -34,12 +34,7 @@
         hide-bottom-space
         :rules="[(val) => !val || isValidPhone(val) || t('error.phone')]"
       />
-      <q-input
-        bg-color="white"
-        outlined
-        v-model="company"
-        :label="t('subscription.company')"
-      />
+      <q-input bg-color="white" outlined v-model="company" :label="t('subscription.company')" />
       <slot name="appendFields"></slot>
     </div>
     <slot name="button">
@@ -56,8 +51,8 @@
 </template>
 
 <script setup lang="ts">
-import { useVModels } from "@vueuse/core";
-import { useI18n } from "vue-i18n";
+import { useVModels } from '@vueuse/core';
+import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
 
@@ -71,12 +66,7 @@ interface SubscriptionFormProps {
 const props = withDefaults(defineProps<SubscriptionFormProps>(), {
   isProcessing: false,
 });
-const emit = defineEmits([
-  "update:name",
-  "update:email",
-  "update:phone",
-  "update:company",
-]);
+const emit = defineEmits(['update:name', 'update:email', 'update:phone', 'update:company']);
 const { name, email, company, phone } = useVModels(props, emit);
 const isValidEmail = (email: string) => {
   const emailPattern =
