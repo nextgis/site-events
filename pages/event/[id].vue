@@ -58,6 +58,17 @@
             <a class="event-website-link" :href="event.website" target="_blank">{{ event.website }}</a>
           </q-card-section>
         </q-card>
+        <q-card flat class="bg-grey-2 q-mb-lg" v-if="!isHappened && event.link_video_translation">
+          <q-card-section class="event-website-card q-pa-lg">
+            <h6 class="q-mb-sm">{{ t('event.streamLink') }}</h6>
+            <a class="event-website-link" :href="event.link_video_translation" target="_blank">{{
+              event.link_video_translation
+            }}</a>
+            <div class="text-blue-grey-4 text-body2">
+              {{ t('event.streamLin') }}
+            </div>
+          </q-card-section>
+        </q-card>
         <q-card class="bg-grey-2" flat v-if="shouldRegistrationBeShown">
           <q-card-section class="event-subscription-card q-pa-lg">
             <template v-if="event.status === 'closed'">
