@@ -41,7 +41,8 @@
     "noEvents": "Событий пока нет.",
     "streamLink": "Ссылка на трансляцию",
     "streamLinkHintd": "Join the live stream via a public link, or register to receive a link to the video meeting",
-    "streamLinkHint": "Смотрите прямую трансляцию или регистрируйтесь для участия в онлайн-встрече."
+    "streamLinkHint": "Смотрите прямую трансляцию или регистрируйтесь для участия в онлайн-встрече.",
+    "supplementaryMaterials": "Дополнительные материалы"
   },
   "error": {
     "404title": "Страница не существует",

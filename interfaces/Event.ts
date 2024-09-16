@@ -14,7 +14,7 @@ export interface EventFromApi {
   website?: string;
   video?: string;
   presentation?: string;
-  link_video_translation?: string;
+  link_supplements?: string;
 }
 export interface Event {
   id: number;
@@ -33,4 +33,5 @@ export interface Event {
   video?: string;
   presentation?: string;
   link_video_translation?: string;
+  link_supplements?: string;
 }

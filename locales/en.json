@@ -40,7 +40,8 @@
     "signup": "Sign up",
     "noEvents": "Currently, there are no events.",
     "streamLink": "Link for the Live Stream",
-    "streamLinkHint": "Join the live stream via a public link, or register to receive a link to the video meeting"
+    "streamLinkHint": "Join the live stream via a public link, or register to receive a link to the video meeting",
+    "supplementaryMaterials": "Supplementary materials"
   },
   "error": {
     "404title": "Page does not exist",

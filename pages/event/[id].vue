@@ -118,10 +118,17 @@
                   allowfullscreen
                 ></iframe>
               </div>
-              <div v-if="event.presentation">
-                <AppIconText :href="event.presentation" icon="mdi-presentation" target="_blank">
-                  {{ t('event.presentation') }}
-                </AppIconText>
+              <div class="q-gutter-y-xs">
+                <div v-if="event.presentation">
+                  <AppIconText :href="event.presentation" icon="mdi-presentation" target="_blank">
+                    {{ t('event.presentation') }}
+                  </AppIconText>
+                </div>
+                <div v-if="event.link_supplements">
+                  <AppIconText :href="event.presentation" icon="mdi-link" target="_blank">
+                    {{ t('event.supplementaryMaterials') }}
+                  </AppIconText>
+                </div>
               </div>
             </div>
           </q-card-section>
