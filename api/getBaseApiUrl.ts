@@ -1,4 +1,4 @@
-export const getBaseApiUrl = (locale: string) =>
-  locale === "ru"
-    ? import.meta.env.VITE_API_URL_RU
-    : import.meta.env.VITE_API_URL_EN;
+export const getBaseApiUrl = (locale: string) => {
+  const config = useRuntimeConfig();
+  return locale === 'ru' ? config.public.apiUrlRu : config.public.apiUrlEn;
+};
