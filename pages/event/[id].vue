@@ -65,7 +65,7 @@
               event.link_video_translation
             }}</a>
             <div class="text-blue-grey-4 text-body2">
-              {{ t('event.streamLin') }}
+              {{ t('event.streamLinkHint') }}
             </div>
           </q-card-section>
         </q-card>
