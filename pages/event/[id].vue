@@ -107,7 +107,7 @@
           <q-card-section class="event-resources-card q-pa-lg">
             <h6 class="q-mb-md">{{ t('event.resources') }}</h6>
             <div class="q-gutter-y-md q-mt-none">
-              <div class="event-resources__video">
+              <div class="event-resources__video" v-if="videoUrl">
                 <iframe
                   width="100%"
                   height="100%"
