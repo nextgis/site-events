@@ -32,6 +32,7 @@ export default defineNuxtConfig({
     public: {
       apiUrlEn: process.env.NUXT_PUBLIC_API_URL_EN,
       apiUrlRu: process.env.NUXT_PUBLIC_API_URL_RU,
+      yaMetrikaId: process.env.NUXT_PUBLIC_YA_METRIKA_ID,
     },
   },
   i18n: {
@@ -74,6 +75,15 @@ export default defineNuxtConfig({
         {
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap',
+        },
+      ],
+      noscript: [
+        {
+          children:
+            process.env.NUXT_PUBLIC_YA_METRIKA_ID &&
+            `
+              <div><img src="https://mc.yandex.ru/watch/${process.env.NUXT_PUBLIC_YA_METRIKA_ID}" style="position:absolute; left:-9999px;" alt=""/></div>
+            `,
         },
       ],
     },
