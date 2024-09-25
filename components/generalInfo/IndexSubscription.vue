@@ -7,10 +7,7 @@
     <slot name="prepend"></slot>
     <div class="index-subscription__inner fit">
       <h2 class="text-h4 q-mb-lg">{{ generalInfo.subscribe_title }}</h2>
-      <p
-        class="text-left q-mb-lg"
-        v-html="generalInfo.subscribe_description"
-      ></p>
+      <div class="text-left q-mb-lg" v-html="generalInfo.subscribe_description"></div>
       <SubscriptionForm
         @submit.prevent="subscribe"
         v-model:company="userCompany"
@@ -21,12 +18,7 @@
       >
         <template v-slot:appendFields>
           <template v-if="errors.length > 0">
-            <q-banner
-              rounded
-              class="text-white bg-red"
-              v-for="(error, index) in errors"
-              :key="index"
-            >
+            <q-banner rounded class="text-white bg-red" v-for="(error, index) in errors" :key="index">
               {{ t(`subscription.${error}`) }}
             </q-banner>
           </template>
@@ -48,27 +40,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-import { useI18n } from "vue-i18n";
-import { storeToRefs } from "pinia";
-import { useGeneralInfoStore } from "@/store/generalInfoStore";
-import SubscriptionForm from "@/components/events/SubscriptionForm.vue";
-import { useSubscriptionForm } from "@/composables/events/useSubscriptionForm";
+import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { storeToRefs } from 'pinia';
+import { useGeneralInfoStore } from '@/store/generalInfoStore';
+import SubscriptionForm from '@/components/events/SubscriptionForm.vue';
+import { useSubscriptionForm } from '@/composables/events/useSubscriptionForm';
 
 const { t } = useI18n();
 
 const generalInfoStore = useGeneralInfoStore();
 const { generalInfo } = storeToRefs(generalInfoStore);
 
-const {
-  userName,
-  userEmail,
-  userPhone,
-  userCompany,
-  subscribe,
-  isSubscribeFormSending,
-  errors,
-} = useSubscriptionForm({
+const { userName, userEmail, userPhone, userCompany, subscribe, isSubscribeFormSending, errors } = useSubscriptionForm({
   shouldSubscribeForAllEvents: ref(true),
 });
 </script>
@@ -85,7 +69,7 @@ const {
     left: 0;
     width: calc(100% + 110px);
     overflow: hidden;
-    background: url("/img/index_subscription_bg.png") center top no-repeat;
+    background: url('/img/index_subscription_bg.png') center top no-repeat;
     background-size: auto 881px;
   }
 
