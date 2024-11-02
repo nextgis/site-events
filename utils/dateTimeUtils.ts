@@ -31,4 +31,20 @@ const isAfter = (date: AppDate, unit: OpUnitType | undefined): boolean => dayjs(
 const isSame = (date1: AppDate, date2: AppDate, unit: UnitType | undefined = undefined): boolean =>
   date1.isSame(date2, unit);
 
-export { getTimestamp, parseUTCDate, timestampToDate, isBefore, isAfter, isSame, formatDate, formatTime, type AppDate };
+const getUserTimezone = () => dayjs.tz.guess();
+
+const getUtcOffset = () => dayjs().utcOffset();
+
+export {
+  getTimestamp,
+  parseUTCDate,
+  timestampToDate,
+  isBefore,
+  isAfter,
+  isSame,
+  formatDate,
+  formatTime,
+  getUserTimezone,
+  getUtcOffset,
+  type AppDate,
+};

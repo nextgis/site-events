@@ -1,9 +1,4 @@
-import {
-  timestampToDate,
-  isSame,
-  formatDate,
-  formatTime,
-} from "@/utils/dateTimeUtils";
+import { timestampToDate, isSame, formatDate, formatTime } from '@/utils/dateTimeUtils';
 
 const formatEventDates = ({
   dateStart,
@@ -19,7 +14,7 @@ const formatEventDates = ({
   locale: string;
   timezone: string;
   timezoneSuffix: string;
-  dateFormat: "MMM D" | "D MMMM";
+  dateFormat: 'MMM D' | 'D MMMM';
   timeFormat: string;
 }): string => {
   const dateStartLocal = timestampToDate({
@@ -34,7 +29,7 @@ const formatEventDates = ({
   });
   const yearStart = dateStartLocal.year();
   const yearEnd = dateEndLocal.year();
-  if (isSame(dateStartLocal, dateEndLocal, "day"))
+  if (isSame(dateStartLocal, dateEndLocal, 'day'))
     return `${formatDate({
       date: dateStartLocal,
       format: dateFormat,
@@ -50,10 +45,16 @@ const formatEventDates = ({
     return `${formatDate({
       date: dateStartLocal,
       format: dateFormat,
+    })} ${formatTime({
+      date: dateStartLocal,
+      format: timeFormat,
     })} – ${formatDate({
       date: dateEndLocal,
       format: dateFormat,
-    })} ${yearStart}`;
+    })} ${formatTime({
+      date: dateEndLocal,
+      format: timeFormat,
+    })}, ${yearStart} (${timezoneSuffix}) `;
   } else {
     return `${formatDate({
       date: dateStartLocal,
