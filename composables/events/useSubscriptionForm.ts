@@ -1,26 +1,23 @@
-import { watch, type Ref, ref } from "vue";
-import { useAsyncState } from "@vueuse/core";
-import { useQuasar } from "quasar";
-import { storeToRefs } from "pinia";
-import { AxiosError } from "axios";
-import { subscribeToEvent } from "@/api/eventsApi";
-import EventErrorService from "@/services/EventErrorService";
-import EventSubscriptionSuccessDialog from "@/components/events/EventSubscriptionSuccessDialog.vue";
-import AllEventsSubscriptionSuccessDialog from "@/components/events/AllEventsSubscriptionSuccessDialog.vue";
-import SubscriptionErrorDialog from "@/components/events/SubscriptionErrorDialog.vue";
-import { useGeneralInfoStore } from "@/store/generalInfoStore";
-import { type UserData } from "@/interfaces/UserData";
-import { type Event } from "@/interfaces/Event";
+import { watch, type Ref, ref } from 'vue';
+import { useAsyncState } from '@vueuse/core';
+import { useQuasar } from 'quasar';
+import { storeToRefs } from 'pinia';
+import { AxiosError } from 'axios';
+import { subscribeToEvent } from '@/api/eventsApi';
+import EventErrorService from '@/services/EventErrorService';
+import EventSubscriptionSuccessDialog from '@/components/events/EventSubscriptionSuccessDialog.vue';
+import AllEventsSubscriptionSuccessDialog from '@/components/events/AllEventsSubscriptionSuccessDialog.vue';
+import SubscriptionErrorDialog from '@/components/events/SubscriptionErrorDialog.vue';
+import { useGeneralInfoStore } from '@/store/generalInfoStore';
+import { type UserData } from '@/interfaces/UserData';
+import { type Event } from '@/interfaces/Event';
 
 interface UseSubscriptionFormOptions {
   shouldSubscribeForAllEvents: Ref<boolean>;
   eventData?: Ref<Event | null>;
 }
 
-const useSubscriptionForm = ({
-  shouldSubscribeForAllEvents,
-  eventData,
-}: UseSubscriptionFormOptions) => {
+const useSubscriptionForm = ({ shouldSubscribeForAllEvents, eventData }: UseSubscriptionFormOptions) => {
   const $q = useQuasar();
   const { locale } = useI18n();
 
@@ -38,22 +35,28 @@ const useSubscriptionForm = ({
       email: userEmail.value,
       phone: userPhone.value,
       company: userCompany.value,
-    })
+    }),
   );
 
   const callSubscribeApi = () => {
-    if (!shouldSubscribeForAllEvents.value && eventData?.value) {
-      return subscribeToEvent(eventData.value.id, userData.value, locale.value);
+    if (!shouldSubscribeForAllEvents.value && eventData?.value?.id) {
+      return subscribeToEvent({
+        id: eventData.value.id,
+        userData: userData.value,
+        locale: locale.value,
+        refEventId: eventData.value.id,
+      });
     }
 
     if (shouldSubscribeForAllEvents.value && generalInfo.value) {
-      return subscribeToEvent(
-        Number(generalInfo.value.id_all_events),
-        userData.value,
-        locale.value
-      );
+      return subscribeToEvent({
+        id: Number(generalInfo.value.id_all_events),
+        userData: userData.value,
+        locale: locale.value,
+        refEventId: eventData?.value?.id,
+      });
     }
-    throw new Error("Insufficient data from store to make a request");
+    throw new Error('Insufficient data from store to make a request');
   };
 
   const eventErrorService = new EventErrorService();
@@ -87,11 +90,7 @@ const useSubscriptionForm = ({
     },
     onError(error) {
       if (error instanceof AxiosError) {
-        if (
-          error.response &&
-          error.response.data &&
-          eventErrorService.isUserError(error.response.data.error_id)
-        ) {
+        if (error.response && error.response.data && eventErrorService.isUserError(error.response.data.error_id)) {
           eventErrorService.addError(error.response.data.error_id);
         } else {
           $q.dialog({
@@ -108,8 +107,8 @@ const useSubscriptionForm = ({
   watch(
     () => userData.value.email,
     () => {
-      errors.value = eventErrorService.removeIrrelevantErrors(["email"]);
-    }
+      errors.value = eventErrorService.removeIrrelevantErrors(['email']);
+    },
   );
 
   return {
