@@ -72,4 +72,11 @@ yarn preview
 bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Docker image
+
+Build image
+
+```sh
+docker build -t [image_name] .
+docker buildx build --platform=linux/amd64 -t [image_name] . //for apple with M1
+```
