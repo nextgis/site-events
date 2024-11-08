@@ -74,6 +74,13 @@ bun run preview
 
 ## Docker image
 
+Build frontend
+
+```sh
+yarn build-staging //for staging
+yarn build-prod
+```
+
 Build image
 
 ```sh
