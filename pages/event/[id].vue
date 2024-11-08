@@ -86,7 +86,7 @@
                 :isProcessing="isSubscribeFormSending"
               >
                 <template v-slot:appendFields>
-                  <div>
+                  <div v-if="event.global_subscription">
                     <q-toggle
                       class="event-subscription__all-events"
                       v-model="shouldSubscribeForAllEvents"

@@ -15,6 +15,7 @@ export interface EventFromApi {
   video?: string;
   presentation?: string;
   link_supplements?: string;
+  global_subscription?: boolean;
 }
 export interface Event {
   id: number;
@@ -34,4 +35,5 @@ export interface Event {
   presentation?: string;
   link_video_translation?: string;
   link_supplements?: string;
+  global_subscription?: boolean;
 }
